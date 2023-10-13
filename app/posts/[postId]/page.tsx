@@ -17,9 +17,9 @@ export async function generateStaticParams() {
 
   if (!posts) return [];
 
-  return posts.map((post) => {
-    postId: post.id;
-  });
+  return posts.map((post) => ({
+    postId: post.id,
+  }));
 }
 
 export async function generateMetadata({ params: { postId } }: Props) {
